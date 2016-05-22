@@ -7,6 +7,7 @@ from fontTools.ttLib import TTFont
 tmpl = """
 var map = {%s};
 ;module.exports = (name)=>String.fromCharCode(map[name]);
+;module.exports.map = map;
 """
 
 def main(fontFile, output):

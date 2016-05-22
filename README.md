@@ -13,6 +13,7 @@ The fontawesomeConf.js like belw
 ```javascript
 var map = {"arrow":"62976","checked":"62977","checked-s":"62978","tag-svip":"62995"};
 ;module.exports = (name)=>String.fromCharCode(map[name]); 
+;module.exports.map = map;
 ```
 
 and use in react native:
