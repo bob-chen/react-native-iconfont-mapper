@@ -8,7 +8,7 @@ Simple script to transform iconfont file(.ttf) to a js mapping moudle . The js m
 
 It will read the `fontawesome.ttf` file and generate fontawesomeConf.js .
 
-The fontawesomeConf.js like belw
+The fontawesomeConf.js like below
 
 ```javascript
 var map = {"arrow":"62976","checked":"62977","checked-s":"62978","tag-svip":"62995"};
