@@ -2,6 +2,22 @@
 
 Simple script to transform iconfont file(.ttf) to a js mapping moudle . The js mapping moudle used in react native iconfont.
 
+# Requirement
+
+Require python package `fonttools`.
+
+> pip install fonttools
+
+If on Mac OS El Capitan and later got the error:
+
+```
+Could not install packages due to an EnvironmentError: [Errno 1] Operation not permitted: '/System/Library/Frameworks/Python.framework/Versions/2.7/share'
+```
+
+try to use:
+
+> pip install fonttools --user
+
 # Usage
 
 `$ python iconfont-mapper.py fontawesome.ttf fontawesomeConf.js `
