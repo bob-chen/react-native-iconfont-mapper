@@ -11,7 +11,7 @@ It will read the `fontawesome.ttf` file and generate fontawesomeConf.js .
 The fontawesomeConf.js like below
 
 ```javascript
-var map = {"arrow":"62976","checked":"62977","checked-s":"62978","tag-svip":"62995"};
+var map = {"arrow":62976,"checked":62977,"checked-s":62978,"tag-svip":62995};
 ;module.exports = (name)=>String.fromCharCode(map[name]); 
 ;module.exports.map = map;
 ```
