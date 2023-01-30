@@ -21,7 +21,7 @@ def main(fontFile, output):
 		f=file(output,"w+")
 		f.write(tmpl % tmp)
 		f.close()	
-	except Exception, ex:
+	except Exception as ex:
 		print ex
 
 def showHelp():
