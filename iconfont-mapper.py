@@ -1,12 +1,12 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import sys, os
 
 from fontTools.ttLib import TTFont
 
 tmpl = """
 var map = {%s};
-;module.exports = (name)=>String.fromCharCode(map[name]);
+;module.exports = (name)=>String.fromCharCode(String(map[name]));
 ;module.exports.map = map;
 """
 
@@ -16,7 +16,7 @@ def main(fontFile, output):
 		glyphMap = font["cmap"].getcmap(3,1).cmap
 		tmp = ""
 		for k in glyphMap:
-			tmp += '"%s":"%s",' % (glyphMap[k],k)
+			tmp += '"%s":%d,' % (glyphMap[k],int(k))
 
 		f=file(output,"w+")
 		f.write(tmpl % tmp)
@@ -28,7 +28,7 @@ def showHelp():
 	print """
 Iconfont map generator.
 
-usage: 
+usage:
 iconfont-maper <iconfont> <output>      generate map file from iconfont file .
 iconfont-maper -h                       show this help.
 """
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 	if len(sys.argv) < 2:
 		showHelp()
 		sys.exit()
-	
+
 	if len(sys.argv) == 2 and sys.argv[1] == "-h":
 		showHelp()
 		sys.exit()
